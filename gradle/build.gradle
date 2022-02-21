@@ -1,0 +1,43 @@
+buildscript {
+  repositories {
+    mavenLocal()
+    mavenCentral()
+  }
+
+  dependencies {
+    classpath group: 'org.nineml', name: 'coffeepot', version: coffeepotVersion
+  }
+}
+
+plugins {
+  id "java"
+}
+
+repositories {
+  mavenLocal()
+  mavenCentral()
+}
+
+configurations {
+  coffeepot.extendsFrom implementation
+}
+
+dependencies {
+  implementation (
+    [group: 'org.nineml', name: 'coffeepot', version: coffeepotVersion]
+  )
+}
+
+task dateToXml(type: JavaExec) {
+  inputs.file "${projectDir}/grammars/dates.ixml"
+  inputs.file "${projectDir}/inputs/date.txt"
+  outputs.file "${buildDir}/date.xml"
+
+  classpath = configurations.coffeepot
+  mainClass = 'org.nineml.coffeepot.Main'
+  args = ["--grammar:${projectDir}/grammars/dates.ixml",
+          "--output:${buildDir}/date.xml",
+          "--input:${projectDir}/inputs/date.txt",
+          '--pretty-print',
+          '--log:warning']
+}

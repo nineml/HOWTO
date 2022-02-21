@@ -1,0 +1,38 @@
+plugins {
+  id "java"
+}
+
+repositories {
+  mavenLocal()
+  mavenCentral()
+}
+
+dependencies {
+  implementation (
+    [group: 'org.nineml', name: grinderName, version: grinderVersion],
+    [group: 'org.nineml', name: filterName, version: filterVersion]
+  )
+  testImplementation (
+    [group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.4.2'],
+    [group: 'org.junit.platform', name: 'junit-platform-console-standalone', version: '1.7.1']
+  )
+  testRuntimeOnly (
+    [group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.4.2'],
+    [group: 'org.junit.vintage', name: 'junit-vintage-engine', version: '5.4.2'],
+    [group: 'org.junit.platform', name: 'junit-platform-runner', version: '1.8.2']
+  )
+}
+
+// ============================================================
+
+tasks.withType(JavaCompile) {
+    options.compilerArgs << '-Xlint:deprecation'
+}
+
+// ============================================================
+
+task helloWorld() {
+  doLast {
+    println('Hello, world.')
+  }
+}
