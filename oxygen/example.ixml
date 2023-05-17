@@ -1,0 +1,7 @@
+ lines = (number, LF)*, LF? .
+-number = decimal | hex .
+ hex = hex-digit+ .
+ decimal = decimal-digit+ .
+-hex-digit = ["0"-"9" | "a"-"f" | "A"-"F" ] .
+-decimal-digit = ["0"-"9" ] .
+-LF = -#d?, -#a .
