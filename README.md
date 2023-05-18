@@ -5,6 +5,7 @@ This repository contains examples of how to use the
 
 * As a command line application
 * From within a Gradle build script
-* With Saxon extension functions
 * In a Java application
+* As an Oxygen transformation scenario
+* With Saxon extension functions
 * As a XProc step [coming soon]
