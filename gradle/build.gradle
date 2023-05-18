@@ -28,6 +28,8 @@ dependencies {
   )
 }
 
+defaultTasks 'dateToXml'
+
 task dateToXml(type: JavaExec) {
   inputs.file "${projectDir}/grammars/dates.ixml"
   inputs.file "${projectDir}/inputs/date.txt"
