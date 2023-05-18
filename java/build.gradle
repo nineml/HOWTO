@@ -31,6 +31,14 @@ tasks.withType(JavaCompile) {
 
 // ============================================================
 
+task demo(type: JavaExec, dependsOn: ['compileJava']) {
+  inputs.file "${projectDir}/grammars/dates.ixml"
+
+  mainClass = 'example.SampleApp'
+  classpath = sourceSets.main.runtimeClasspath
+  args = ["${projectDir}/grammars/dates.ixml", '18 May 2023']
+}
+
 task helloWorld() {
   doLast {
     println('Hello, world.')

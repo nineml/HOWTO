@@ -8,6 +8,7 @@ public class SampleApp {
     public static void main(String[] args) throws URISyntaxException, IOException {
         if (args.length == 0) {
             System.err.println("Usage: SampleApp grammar input");
+            System.exit(1);
         }
 
         String baseURI = "file://" + System.getProperty("user.dir").replaceAll("\\\\", "/") + "/";
