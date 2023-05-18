@@ -9,7 +9,8 @@ import java.net.URI;
 
 public class Transformer {
     public String ixml(URI grammar, String input) throws IOException  {
-        InvisibleXmlParser parser = InvisibleXml.getParser(grammar);
+        InvisibleXml ixml = new InvisibleXml();
+        InvisibleXmlParser parser = ixml.getParser(grammar);
         InvisibleXmlDocument doc = parser.parse(input);
         if (doc.succeeded()) {
             return doc.getTree();

@@ -1,7 +1,7 @@
 # With Saxon extension functions
 
 [CoffeeSacks](https://coffeesacks.nineml.org) is a set of Saxon extension functions.
-These functions work with Saxon 10.x and 11.x.
+These functions work with Saxon 10.x or later.
 
 ## From the command line
 
@@ -16,15 +16,30 @@ These functions work with Saxon 10.x and 11.x.
 
 More complete [documentation](https://coffeesacks.nineml.org) is available.
 
+## Demo
+
+The `download-jars.sh` shell script will attempt to download all of the libraries.
+
+```
+sh ./download-jars.sh
+```
+
 The `run-saxon.sh` shell script will run an example Saxon transformation if you unpack
-all of the relevant jar files in the `saxon` directory.
+all of the relevant jar files in the current and/or `lib` directories. (That’s what the
+download script does.)
 
 ```
 sh ./run-saxon.sh
 ```
 
-That should print the result:
+Should print the result:
 
 ```
-<?xml version="1.0" encoding="utf-8"?><doc><date><day>15</day><month>February</month><year>2022</year></date></doc>
+<doc>
+  <date>
+    <day>15</day>
+    <month>February</month>
+    <year>2022</year>
+  </date>
+</doc>
 ```
