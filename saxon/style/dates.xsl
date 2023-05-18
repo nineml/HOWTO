@@ -5,14 +5,14 @@
                 exclude-result-prefixes="#all"
                 version="3.0">
 
-<xsl:output method="xml" encoding="utf-8" indent="no"/>
+<xsl:output method="xml" encoding="utf-8" indent="yes" omit-xml-declaration="yes"/>
 
 <xsl:mode on-no-match="shallow-copy"/>
 
 <xsl:template name="xsl:initial-template">
-  <xsl:variable name="grammar" select="cs:grammar('../grammars/dates.ixml')"/>
+  <xsl:variable name="parser" select="cs:load-grammar('../grammars/dates.ixml')"/>
   <doc>
-    <xsl:sequence select="cs:parse-string($grammar, '15 February 2022')"/>
+    <xsl:sequence select="$parser('15 February 2022')"/>
   </doc>
 </xsl:template>
 
