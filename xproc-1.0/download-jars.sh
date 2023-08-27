@@ -27,9 +27,19 @@ download CoffeeGrinder
 download CoffeeFilter
 download CoffeeSacks
 
-if [ ! -f saxon-he-12.3.jar ]; then
-    echo "Downloading Saxon 12.3 ..."
-    curl -s -o SaxonHE12-3J.zip https://www.saxonica.com/download/SaxonHE12-3J.zip
-    unzip -q -o SaxonHE12-3J.zip "*.jar"
-    rm -f SaxonHE12-3J.zip saxon-he-test*.jar saxon-he-xqj*.jar
+if [ ! -d lib/xmlcalabash1-coffeepress.jar ]; then
+    echo "Downloading CoffeePress ..."
+    curl -s -L -o coffeepress.zip \
+         https://github.com/ndw/xmlcalabash1-coffeepress/releases/download/1.0.0/xmlcalabash1-coffeepress-1.0.0.zip
+    unzip -q -j coffeepress.zip "*.jar"
+    mv *.jar lib/
+    rm -f coffeepress.zip
+fi
+
+if [ ! -d xmlcalabash-1.5.7-120 ]; then
+    echo "Downloading XML Calabash ..."
+    curl -s -L -o xmlcalabash.zip \
+         https://github.com/ndw/xmlcalabash1/releases/download/1.5.7-120/xmlcalabash-1.5.7-120.zip
+    unzip -q xmlcalabash.zip
+    rm -f xmlcalabash.zip
 fi

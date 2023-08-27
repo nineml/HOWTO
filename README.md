@@ -8,4 +8,4 @@ This repository contains examples of how to use the
 * In a Java application
 * As an Oxygen transformation scenario
 * With Saxon extension functions
-* As a XProc step [coming soon]
+* As an XProc step
