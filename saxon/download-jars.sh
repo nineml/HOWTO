@@ -27,9 +27,9 @@ download CoffeeGrinder
 download CoffeeFilter
 download CoffeeSacks
 
-if [ ! -f saxon-he-12.2.jar ]; then
-    echo "Downloading Saxon 12.2 ..."
-    curl -s -o SaxonHE12-2J.zip https://www.saxonica.com/download/SaxonHE12-2J.zip
-    unzip -q -o SaxonHE12-2J.zip "*.jar"
-    rm -f SaxonHE12-2J.zip saxon-he-test*.jar saxon-he-xqj*.jar
+if [ ! -f saxon-he-12.3.jar ]; then
+    echo "Downloading Saxon 12.3 ..."
+    curl -s -o SaxonHE12-3J.zip https://www.saxonica.com/download/SaxonHE12-3J.zip
+    unzip -q -o SaxonHE12-3J.zip "*.jar"
+    rm -f SaxonHE12-3J.zip saxon-he-test*.jar saxon-he-xqj*.jar
 fi
