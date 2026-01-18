@@ -1,11 +1,5 @@
-# HOWTO
+# Moved to Codeberg
 
-This repository contains examples of how to use the
-[NineML](https://nineml.org/) family of Invisible XML tools.
+To follow this project, please see https://codeberg.org/NineML/HOWTO
 
-* As a command line application
-* From within a Gradle build script
-* In a Java application
-* As an Oxygen transformation scenario
-* With Saxon extension functions
-* As an XProc step
+To retrieve the last state of this project on GitHub, roll back one commit.
